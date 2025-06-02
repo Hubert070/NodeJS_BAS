@@ -14,12 +14,16 @@ get type() {
     return this._type
 }
 withdraw(balanceMinus: number) {
-    if (balanceMinus > 0){
-       this._balance = this.balance - balanceMinus}
-    else {
-       throw new Error("FOUT - bel Ismail.");
+    if (balanceMinus <= 0){
+       throw new Error("FOUT - bedrag is negatief.");  
     }
+    if (accountx.type <> "savings"){
+        throw new Error("FOUT - het is geen spaarrekening")
+    }
+    if (this._balance < balanceMinus){
+        throw new Error("FOUT - saldo wordt negatief.");
 }
+
 deposit(balancePlus: number){
     if (balancePlus > 0){
        this._balance = this.balance + balancePlus}
@@ -29,4 +33,3 @@ deposit(balancePlus: number){
 
 }
 }
-
