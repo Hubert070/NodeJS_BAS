@@ -1,0 +1,14 @@
+{
+  "name": "nodejs_bas",
+  "version": "1.0.0",
+  "description": "cursus",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "Hubert",
+  "license": "ISC",
+  "dependencies": {
+    "tsx": "^4.19.4"
+  }
+}
