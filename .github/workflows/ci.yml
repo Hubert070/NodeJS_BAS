@@ -1,4 +1,4 @@
-name: Run Create Account tests
+name: Run Create Account and money transfer tests
 on:
   push:
     branches: [ main, master ]
