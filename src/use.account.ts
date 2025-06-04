@@ -1,22 +1,27 @@
 import { Account } from "./account";
 
-let accountx = new Account("savings");
-if (accountx.type == "savings") {
-    console.log("Dit is een spaarrekening")
-    try {accountx.withdraw(0);}
-    catch (err) {
-       console.log("FOUT - op te nemen bedrag mag niet negatief zijn")
-}}
+let account = new Account("savings");
+console.log(`Account type: ${account.type}`);
+console.log(`Account balance: ${account.balance}`);
 
-else {
-try {accountx.deposit(15000)}
+account.deposit(1000);
+console.log(`Account balance after deposit: ${account.balance}`);
+
+account.withdraw(50);
+console.log(`Account balance after withdrawal: ${account.balance}`);
+
+try {
+    account.withdraw(-50);
+}
 catch (err) {
-    console.log("FOUT - bel Ismail." + err.message);
-}}
+    console.log(err.message);
+}
+console.log(`Saldo na poging opname van een negatief bedrag: ${account.balance}`);
 
-
-console.log(`Account type: ${accountx.type}`);
-console.log(`Account balance deposit: ${accountx.balance}`);
-
-accountx.withdraw(50);
-console.log(`Account balance withdraw: ${accountx.balance}`);
+try {
+    account.withdraw(2000);
+}
+catch (err) {
+    console.log(err.message);
+}
+console.log(`Saldo na poging opname van een bedrag dat hoger is dan het saldo: ${account.balance}`);
